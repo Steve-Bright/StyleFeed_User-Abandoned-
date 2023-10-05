@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'signComponents/radio.dart';
-import 'signComponents/checkbox.dart';
+import 'LoginPageComponents/radio.dart';
+import 'LoginPageComponents/checkbox.dart';
 
 class SigningUpPage extends StatefulWidget {
   const SigningUpPage({super.key});

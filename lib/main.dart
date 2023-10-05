@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'signUp.dart';
-import 'signIn.dart';
-import 'user_pages/save_card.dart';
-import 'user_pages/cart.dart';
+import 'LoginPage/signUp.dart';
+import 'LoginPage/signIn.dart';
+import 'Navigation/SavedPage/saveCard.dart';
+import 'Navigation/CartPage/cart.dart';
 
 void main() => runApp(
   MaterialApp(

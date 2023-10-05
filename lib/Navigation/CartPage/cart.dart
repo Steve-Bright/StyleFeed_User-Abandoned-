@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quantity_input/quantity_input.dart';
-import 'package:style_feed/user_pages/assetPaths.dart';
+import 'assetPaths.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Cart extends StatefulWidget {
