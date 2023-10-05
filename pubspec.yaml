@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  quantity_input: ^1.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -46,6 +47,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  get:
+  google_nav_bar: ^5.0.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,6 +65,7 @@ flutter:
     - assets/logo.png
     - assets/blank_profile.png
     - assets/clothing.jpg
+    - assets/items/lacoste.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

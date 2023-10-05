@@ -191,7 +191,7 @@ class _SigningInPageState extends State<SigningInPage>{
                                       InkWell(
                                         onTap: (){
                                           //navigate to the page
-
+                                          Navigator.pushReplacementNamed(context, '/savedCard');
                                         },
                                         child: Text('Forgot Password', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueAccent)),
                                       ),

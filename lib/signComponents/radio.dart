@@ -20,7 +20,7 @@ class _GenderRadioState extends State<GenderRadio> {
           children: <Widget>[
             Text('Gender'),
             SizedBox(
-                width: 40
+                width: 30
             ),
             Radio<Gender>(
               value: Gender.male,
