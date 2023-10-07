@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
+import 'package:style_feed/Navigation/navigationBar.dart';
 
 class SavedPage extends StatefulWidget {
   const SavedPage({super.key});
@@ -14,10 +14,6 @@ class _SavedPageState extends State<SavedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {},
-          ),
           actions: [
             IconButton(
               icon: Icon(Icons.account_circle),
@@ -28,11 +24,9 @@ class _SavedPageState extends State<SavedPage> {
           ],
         ),
         body: CardDetail(),
-        bottomNavigationBar: MyButtonNav()
-    );
+        bottomNavigationBar: MyButtonNav());
   }
 }
-
 
 //card detail
 class CardDetail extends StatelessWidget {
@@ -130,76 +124,6 @@ class CardItem extends StatelessWidget {
           Text('Sub_heading'),
         ],
       ),
-    );
-  }
-}
-
-// class bottomAppbar extends StatelessWidget {
-//   const bottomAppbar({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomAppBar(
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.spaceAround,
-//         children: <Widget>[
-//           IconButton(
-//             icon: Icon(Icons.home),
-//             onPressed: () {
-//               // Navigate to home screen or perform other actions.
-//             },
-//           ),
-//           IconButton(
-//             icon: Icon(Icons.search),
-//             onPressed: () {
-//               // Perform search operation.
-//             },
-//           ),
-//           IconButton(
-//             icon: Icon(Icons.settings),
-//             onPressed: () {
-//               // Navigate to settings screen or perform other actions.
-//             },
-//           ),
-//           IconButton(
-//             icon: Icon(Icons.card_giftcard),
-//             onPressed: () {
-//               Navigator.pushNamed(context, '/cardpage');
-//             },
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-class MyButtonNav extends StatelessWidget {
-  const MyButtonNav({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 25
-          ),
-          child: GNav (
-            iconSize: 25,
-            onTabChange: (index){
-              print(index);
-            },
-            color: Colors.black,
-            activeColor: Colors.black,
-            padding: EdgeInsets.all(20),
-            tabs: [
-              GButton(icon: Icons.home,),
-              GButton(icon: Icons.favorite,),
-              GButton(icon: Icons.cabin, onPressed: (){ Navigator.pushNamed(context, '/cart');}),
-              GButton(icon: Icons.message, ),
-            ],
-          ),
-        ),
-
     );
   }
 }
