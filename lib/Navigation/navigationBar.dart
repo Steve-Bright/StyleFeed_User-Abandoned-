@@ -20,9 +20,9 @@ class MyButtonNav extends StatelessWidget {
           activeColor: Colors.black,
           padding: EdgeInsets.all(20),
           tabs: [
-            GButton(icon: Icons.home,),
-            GButton(icon: Icons.favorite,),
-            GButton(icon: Icons.cabin, onPressed: (){ Navigator.pushNamed(context, '/cart');}),
+            GButton(icon: Icons.home, onPressed: (){Navigator.pushReplacementNamed(context, '/userHome');}),
+            GButton(icon: Icons.favorite, onPressed: (){Navigator.pushReplacementNamed(context, '/savedCard');}),
+            GButton(icon: Icons.cabin, onPressed: (){ Navigator.pushReplacementNamed(context, '/cart');}),
             GButton(icon: Icons.message, ),
           ],
         ),

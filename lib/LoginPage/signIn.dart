@@ -120,7 +120,7 @@ class _SigningInPageState extends State<SigningInPage>{
                                 child: Text('Sign In', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)),
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
-                                    // Validation succeeded, save and process the data
+                                    Navigator.pushReplacementNamed(context, '/userHome');
                                     _formKey.currentState!.save();
                                     // Perform additional actions, e.g., send data to a server
                                   }
