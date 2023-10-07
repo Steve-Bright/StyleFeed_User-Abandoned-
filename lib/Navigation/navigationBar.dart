@@ -8,26 +8,37 @@ class MyButtonNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 25
-        ),
-        child: GNav (
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: GNav(
           iconSize: 25,
-          onTabChange: (index){
+          onTabChange: (index) {
             print(index);
           },
           color: Colors.black,
           activeColor: Colors.black,
           padding: EdgeInsets.all(20),
           tabs: [
-            GButton(icon: Icons.home, onPressed: (){Navigator.pushReplacementNamed(context, '/userHome');}),
-            GButton(icon: Icons.favorite, onPressed: (){Navigator.pushReplacementNamed(context, '/savedCard');}),
-            GButton(icon: Icons.cabin, onPressed: (){ Navigator.pushReplacementNamed(context, '/cart');}),
-            GButton(icon: Icons.message, ),
+            GButton(
+                icon: Icons.home,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/userHome');
+                }),
+            GButton(
+                icon: Icons.favorite,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/savedCard');
+                }),
+            GButton(
+                icon: Icons.cabin,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/cart');
+                }),
+            GButton(
+              icon: Icons.message,
+            ),
           ],
         ),
       ),
-
     );
   }
 }
