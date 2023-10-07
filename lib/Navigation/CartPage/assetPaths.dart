@@ -409,3 +409,29 @@ final List<Container> assetPaths = [
   ),
 
 ];
+
+class CartItems extends StatefulWidget {
+  const CartItems({super.key});
+
+  @override
+  State<CartItems> createState() => _CartItemsState();
+}
+class _CartItemsState extends State<CartItems> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: assetPaths.length,
+        itemBuilder: (BuildContext context, int index){
+          final assetPath = assetPaths[index];
+          return Padding(
+            padding: EdgeInsets.all(8.0),
+            child:
+            assetPath,
+            //fit: BoxFit.cover, //Adjust image fit
+
+          );
+        }
+    );
+  }
+}
