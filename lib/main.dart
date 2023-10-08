@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:style_feed/ProductCradDetail/productDetail.dart';
+
 import 'LoginPage/signUp.dart';
 import 'LoginPage/signIn.dart';
 import 'Navigation/SavedPage/saveCard.dart';
 import 'Navigation/CartPage/cart.dart';
 import 'Navigation/HomePage/home.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(
+      MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/signIn',
         routes: {
@@ -15,4 +16,6 @@ void main() => runApp(MaterialApp(
           '/savedCard': (context) => const SavedPage(),
           '/cart': (context) => const Cart(),
           '/userHome': (context) => const Myhome(),
-        }));
+        },
+      ),
+    );
