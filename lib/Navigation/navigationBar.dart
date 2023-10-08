@@ -35,6 +35,9 @@ class MyButtonNav extends StatelessWidget {
                 }),
             GButton(
               icon: Icons.message,
+              onPressed: (){
+                Navigator.pushNamed(context, '/chatHome');
+              }
             ),
           ],
         ),
