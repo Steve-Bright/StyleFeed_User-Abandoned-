@@ -3,7 +3,11 @@ import 'cartItemCard.dart';
 import '../navigationBar.dart';
 
 class Cart_Items extends StatefulWidget {
-  const Cart_Items({super.key});
+  int newQty;
+
+  Cart_Items({
+    required this.newQty
+  });
 
   @override
   State<Cart_Items> createState() => _Cart_ItemsState();
@@ -20,13 +24,24 @@ class _Cart_ItemsState extends State<Cart_Items> {
   void addNewItem(){
     setState(() {
       cartItems.add(cartItems.length + 1);
-      cartPrices.add(cartPrices.length+1);
+      cartPrices.add(2500);
+      cartQty.add(widget.newQty);
     });
   }
 
   void removeCurrentItem(int item_index){
     setState((){
       cartItems.removeAt(item_index);
+    });
+  }
+
+  void updateCartQty(int updatedItemIndex, int updatedQty) {
+    setState(() {
+      // Find the index of the item you want to update and update cartQty
+      final item_index = cartItems.indexOf(updatedItemIndex);
+      if (item_index != -1) {
+        cartQty[item_index] = updatedQty;
+      }
     });
   }
 
@@ -63,26 +78,25 @@ class _Cart_ItemsState extends State<Cart_Items> {
                 child: ListView.builder(
                   itemCount: cartItems.length,
                   itemBuilder: (BuildContext context, int index) {
-                    total = total + 25*2;
+                    total = total + ((cartPrices[index]*cartQty[index]));
                     return CartItemCard(
                       cartIndex: cartItems[index],
                       imageString: 'assets/clothing.jpg',
                       productName: 'Product Name',
-                      price: 25,
-                      initialQuantity: 2,
-                      onIncrease: () {
-// Handle increase quantity
-                      },
-                      onDecrease: () {
-// Handle decrease quantity
-                      },
+                      price: cartPrices[index],
                       onRemove: () {
                         removeCurrentItem(index);
                       },
+                      onQuantityChanged: (updatedQty) {
+                        // Call the updateCartQty callback function with the updated quantity.
+                        // You need to pass the index of the item being updated and the updated quantity.
+                        updateCartQty(index, updatedQty);
+                      },
                     );
-
                   },
+
                 ),
+
               ),
               Container(
                 width: double.infinity,
@@ -94,11 +108,11 @@ class _Cart_ItemsState extends State<Cart_Items> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Text(
-                        'Discount: 4000',
+                        'Discount: 500',
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       Text(
-                        ' Total: $total',
+                        ' Total: ${total-500}',
                         style: TextStyle(color: Colors.white, fontSize: 18)
                       ),
                       Padding(
