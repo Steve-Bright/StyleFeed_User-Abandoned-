@@ -11,13 +11,9 @@ class Myhome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("STYLE FEED",
-      style: TextStyle(
-      fontSize: 23,
-      fontWeight: FontWeight.bold,
-      color: Colors.black,
-)
-      ),actions: [IconButton(onPressed: (){}, icon: Icon(Icons.person))],
+      appBar: AppBar(
+        title: Text("STYLE FEED", style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold, color: Colors.black,)),
+        actions: [IconButton(onPressed: (){}, icon: Icon(Icons.person))],
       ),
 
       
