@@ -134,28 +134,49 @@ class DetailScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
-                  Row(
+                  Column(
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 5),
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.lightBlueAccent,
-                        ),
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: Colors.redAccent,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(
-                        width: 5,
+                        height: 8,
                       ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5),
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.redAccent,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.star, color: Colors.orange[500]),
+                              Icon(Icons.star, color: Colors.orange[500]),
+                              Icon(Icons.star, color: Colors.orange[500]),
+                              Icon(Icons.star, color: Colors.orange[500]),
+                              Icon(Icons.star, color: Colors.black),
+                            ],
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -179,7 +200,7 @@ class DetailScreen extends StatelessWidget {
                         child: ReadMore(),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -193,7 +214,7 @@ class DetailScreen extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.add_shopping_cart_sharp),
-              label: 'Buy Now',
+              label: 'Add to Card',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.message),

@@ -1,24 +1,22 @@
+
 import 'package:flutter/material.dart';
+import 'cartPage.dart';
 
 class CartItemCard extends StatefulWidget {
   final int cartIndex;
   final String imageString;
   final String productName;
   final int price;
-  final int initialQuantity;
-  final VoidCallback onIncrease;
-  final VoidCallback onDecrease;
   final VoidCallback onRemove;
+  final void Function(int) onQuantityChanged;
 
   CartItemCard({
     required this.cartIndex,
     required this.imageString,
     required this.productName,
     required this.price,
-    required this.initialQuantity,
-    required this.onIncrease,
-    required this.onDecrease,
     required this.onRemove,
+    required this.onQuantityChanged,
   });
 
   @override
@@ -26,12 +24,21 @@ class CartItemCard extends StatefulWidget {
 }
 
 class _CartItemCardState extends State<CartItemCard> {
-  int quantity = 0;
+  int quantity = 1;
 
   @override
   void initState() {
     super.initState();
-    quantity = widget.initialQuantity;
+  }
+
+  void increaseValue(){
+    quantity ++;
+    widget.onQuantityChanged(quantity);
+  }
+
+  void decreaseValue(){
+    quantity --;
+    widget.onQuantityChanged(quantity);
   }
 
   @override
@@ -66,7 +73,7 @@ class _CartItemCardState extends State<CartItemCard> {
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    '\$${widget.price.toStringAsFixed(2)}',
+                    '${widget.price}',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.green,
@@ -83,8 +90,7 @@ class _CartItemCardState extends State<CartItemCard> {
                             onPressed: () {
                               setState(() {
                                 if (quantity > 1) {
-                                  quantity--;
-                                  widget.onDecrease();
+                                  decreaseValue();
                                 }
                               });
                             },
@@ -94,8 +100,7 @@ class _CartItemCardState extends State<CartItemCard> {
                             icon: Icon(Icons.add),
                             onPressed: () {
                               setState(() {
-                                quantity++;
-                                widget.onIncrease();
+                                increaseValue();
                               });
                             },
                           ),
