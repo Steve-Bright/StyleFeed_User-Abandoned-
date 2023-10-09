@@ -17,13 +17,20 @@ class _Cart_ItemsState extends State<Cart_Items> {
   int discount = 0;
   int total = 0;
 
+
+  Map<int, Map<String, dynamic>> cart = {
+    // 1: {'name': 'Product Name', 'qty': 1},
+    // 2: {'name': 'Product Name', 'qty': 1},
+  };
+
   List<int> cartItems = [];
   List<int> cartPrices = [];
   List<int> cartQty = [];
 
   void addNewItem(){
     setState(() {
-      cartItems.add(cartItems.length + 1);
+      // cart.addAll({(cart.length+1):{'name': 'Product Name', 'price': 2500,'qty': widget.newQty, 'total': (2500*widget.newQty)}});
+      cartItems.add(cartItems.length);
       cartPrices.add(2500);
       cartQty.add(widget.newQty);
     });
@@ -38,10 +45,13 @@ class _Cart_ItemsState extends State<Cart_Items> {
   void updateCartQty(int updatedItemIndex, int updatedQty) {
     setState(() {
       // Find the index of the item you want to update and update cartQty
+      // final item_index = cartItems.indexOf(updatedItemIndex);
       final item_index = cartItems.indexOf(updatedItemIndex);
       if (item_index != -1) {
         cartQty[item_index] = updatedQty;
+        calculateTotal();
       }
+
     });
   }
 
@@ -50,6 +60,20 @@ class _Cart_ItemsState extends State<Cart_Items> {
       cartItems.clear();
       total = 0;
     });
+  }
+
+  int calculateTotal(){
+    total = 0;
+    for (int i = 0; i < cartItems.length; i++) {
+      total = total + ((cartPrices[i]*cartQty[i]));
+    }
+    total = total - 500;
+    if (total < 0){
+      return total = 0;
+    }
+    else{
+      return total;
+    }
   }
 
   @override
@@ -68,6 +92,9 @@ class _Cart_ItemsState extends State<Cart_Items> {
                   icon: Icon(Icons.delete),
                   onPressed: (){
                     removeAllItems();
+                    cartItems.clear();
+                    cartPrices.clear();
+                    cartQty.clear();
                   }
               )
             ]
@@ -78,9 +105,9 @@ class _Cart_ItemsState extends State<Cart_Items> {
                 child: ListView.builder(
                   itemCount: cartItems.length,
                   itemBuilder: (BuildContext context, int index) {
-                    total = total + ((cartPrices[index]*cartQty[index]));
+                    // total = total + ((cartPrices[index]*cartQty[index]));
                     return CartItemCard(
-                      cartIndex: cartItems[index],
+                      cartIndex: cartItems[index]+1,
                       imageString: 'assets/clothing.jpg',
                       productName: 'Product Name',
                       price: cartPrices[index],
@@ -112,7 +139,7 @@ class _Cart_ItemsState extends State<Cart_Items> {
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       Text(
-                        ' Total: ${total-500}',
+                        ' Total: ${calculateTotal()}',
                         style: TextStyle(color: Colors.white, fontSize: 18)
                       ),
                       Padding(

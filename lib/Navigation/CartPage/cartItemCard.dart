@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'cartPage.dart';
 
 class CartItemCard extends StatefulWidget {
   final int cartIndex;
