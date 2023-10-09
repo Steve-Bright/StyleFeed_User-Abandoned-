@@ -23,9 +23,11 @@ class _ReadMoreState extends State<ReadMore> {
         ),
         GestureDetector(
           onTap: () {
-            setState(() {
-              isExpanded = !isExpanded;
-            });
+            setState(
+              () {
+                isExpanded = !isExpanded;
+              },
+            );
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -82,84 +84,121 @@ class DetailScreen extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "1,500,000 MMK",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: const Color.fromARGB(255, 0, 0, 0),
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.favorite_border_sharp),
-                                ),
-                                IconButton(
-                                    onPressed: () {}, icon: Icon(Icons.send))
-                              ],
-                            ),
-                          ],
-                        ),
-                        Text(
-                          "Jordan 1 Retro High",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        Text(
-                          "Off-White Chicago",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Product Description",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Container(
-                          child: ReadMore(),
-                        )
-                      ],
-                    )
-                  ],
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
                 ),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Text(
+                          "Air Jondon 1 Retro High \nOff-White Chicago",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            "\$5,300",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Text(
+                      "Color Avaliable",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 5),
+                        width: 20,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.lightBlueAccent,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5),
+                        width: 20,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.redAccent,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Product Description",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Container(
+                        child: ReadMore(),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_shopping_cart_sharp),
+              label: 'Buy Now',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: 'Message',
+            )
           ],
         ),
       ),
