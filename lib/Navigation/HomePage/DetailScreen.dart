@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ReadMore extends StatefulWidget {
   @override
@@ -17,7 +18,8 @@ class _ReadMoreState extends State<ReadMore> {
           "The Off-White x Air Jordan 1 Retro High OG was one of the most highly anticipated footwear collaborations of 2017. It marked the first time Virgil Abloh, founder of the Milan-based fashion label and Jordan Brand had teamed up. Nicknamed \"The 10\" edition, this pair comes in the original Chicago-themed white, black and varsity red colorway. Featuring a white, red and black-based deconstructed leather upper with a Swooshless medial side branded with \"Off-White for Nike Air Jordan 1, Beaverton, Oregon, USA © 1985."
           // Show only 3 lines when not expanded
           ,
-          style: TextStyle(color: const Color.fromARGB(255, 94, 94, 94)),
+          style: GoogleFonts.montserrat(
+              color: const Color.fromARGB(255, 94, 94, 94)),
           maxLines: isExpanded ? 2 : 20,
           overflow: TextOverflow.ellipsis,
         ),
@@ -33,7 +35,7 @@ class _ReadMoreState extends State<ReadMore> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               isExpanded ? 'Read More' : 'Read Less',
-              style: TextStyle(
+              style: GoogleFonts.montserrat(
                 color: Colors.blue,
                 fontWeight: FontWeight.bold,
               ),
@@ -56,7 +58,7 @@ class DetailScreen extends StatelessWidget {
           elevation: 0,
           title: Text(
             "Product",
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
                 fontSize: 23, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           leading: IconButton(
@@ -77,132 +79,114 @@ class DetailScreen extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            Image.asset(
-              "assets/1.png",
-              height: 300,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(18),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+            Column(
+              children: [
+                Image.asset(
+                  "assets/1.png",
+                  height: 300,
                 ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        child: Text(
-                          "Air Jondon 1 Retro High \nOff-White Chicago",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            "\$5,300",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    child: Text(
-                      "Color Avaliable",
-                      style: TextStyle(fontSize: 16),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
                     ),
                   ),
-                  Column(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 5),
-                            width: 20,
-                            height: 20,
+                            child: Text(
+                              "Air Jondon 1 Retro High \nOff-White Chicago",
+                              style: GoogleFonts.montserrat(
+                                  fontSize: 18, fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.lightBlueAccent,
+                                color: Colors.orange,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                "\$5,300",
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            child: Text(
+                              "* Only 2 Left *",
+                              style: GoogleFonts.montserrat(color: Colors.red),
+                            ),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.star, color: Colors.orange[500]),
+                                    Icon(Icons.star, color: Colors.orange[500]),
+                                    Icon(Icons.star, color: Colors.orange[500]),
+                                    Icon(Icons.star, color: Colors.orange[500]),
+                                    Icon(Icons.star, color: Colors.black),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 60,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Product Description",
+                              style: GoogleFonts.montserrat(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
                             ),
                           ),
                           SizedBox(
-                            width: 5,
+                            height: 25,
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 5),
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.orange[500]),
-                              Icon(Icons.star, color: Colors.orange[500]),
-                              Icon(Icons.star, color: Colors.orange[500]),
-                              Icon(Icons.star, color: Colors.orange[500]),
-                              Icon(Icons.star, color: Colors.black),
-                            ],
-                          ),
+                            child: ReadMore(),
+                          )
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Product Description",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                      Container(
-                        child: ReadMore(),
-                      )
-                    ],
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
