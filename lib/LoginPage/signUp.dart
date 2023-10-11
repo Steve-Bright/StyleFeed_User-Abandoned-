@@ -193,6 +193,7 @@ class _SigningUpPageState extends State<SigningUpPage>{
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
                                     // Validation succeeded, save and process the data
+                                      Navigator.pushReplacementNamed(context,'/userHome');
                                     _formKey.currentState!.save();
                                     // Perform additional actions, e.g., send data to a server
                                   }

@@ -206,6 +206,19 @@ class _SigningInPageState extends State<SigningInPage>{
                                     ]
                                 ),
 
+
+                                Center(
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                    child: InkWell(
+                                        onTap: (){
+                                          Navigator.pushReplacementNamed(context, '/userHome');
+                                        },
+                                        child: Text('Continue as a guest', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold))
+                                    ),
+                                  ),
+                                ),
+
                               ]
                           ),
 
