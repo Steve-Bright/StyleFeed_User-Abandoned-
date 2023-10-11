@@ -26,40 +26,38 @@ class ChatHome extends StatelessWidget {
   ];
 
   final List<User> users = [
-    User("Wai Yan", "assets/images/winter.jpg"),
-    User("Ma Nan", "assets/images/winter.jpg"),
-    User("Swam Htet", "assets/images/winter.jpg"),
-    User("Swan Htet Naing", "assets/images/winter.jpg"),
-    User("Moe Yan", "assets/images/winter.jpg"),
-    User("Ma Thiri", "assets/images/winter.jpg"),
+    User("Wai Yan", "assets/pfp/winter.jpg"),
+    User("Ma Nan", "assets/pfp/winter.jpg"),
+    User("Swam Htet", "assets/pfp/winter.jpg"),
+    User("Swan Htet Naing", "assets/pfp/winter.jpg"),
+    User("Moe Yan", "assets/pfp/winter.jpg"),
+    User("Ma Thiri", "assets/pfp/winter.jpg"),
   ];
 
   final String currentUserProfileImage = "assets/images/winter.jpg";
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Messages'),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          // Add the user's profile image to the top right corner
-          actions: [
-            CircleAvatar(
-              backgroundImage: AssetImage(currentUserProfileImage),
-              radius: 20, // Adjust the size as needed
+          appBar: AppBar(
+            title: Text('Messages'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-          ],
-        ),
-        body: MessageList(messages: messages, users: users),
-        bottomNavigationBar: MyButtonNav()
-      ),
+            // Add the user's profile image to the top right corner
+            actions: [
+              CircleAvatar(
+                backgroundImage: AssetImage(currentUserProfileImage),
+                radius: 20, // Adjust the size as needed
+              ),
+            ],
+          ),
+          body: MessageList(messages: messages, users: users),
+          bottomNavigationBar: MyButtonNav()),
     );
   }
 }
@@ -89,5 +87,3 @@ class MessageList extends StatelessWidget {
     );
   }
 }
-
-

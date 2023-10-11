@@ -8,7 +8,8 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       home: ChatScreen(
         personName: 'Winter', // Replace with the person's name
-        personProfileImage: 'assets/images/winter.jpg', // Replace with the profile image path
+        personProfileImage:
+            'assets/pfp/winter.jpg', // Replace with the profile image path
       ),
     );
   }
@@ -43,7 +44,8 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _getImage() async {
-    final pickedFile = await ImagePicker().getImage(source: ImageSource.gallery);
+    final pickedFile =
+        await ImagePicker().getImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
@@ -122,31 +124,31 @@ class ChatMessage extends StatelessWidget {
   final File? imageFile;
   final bool isSentByUser; // Indicates whether the message is sent by the user
 
-  ChatMessage({required this.text, this.imageFile, this.isSentByUser=false});
+  ChatMessage({required this.text, this.imageFile, this.isSentByUser = false});
 
   @override
   Widget build(BuildContext context) {
-    final Color backgroundColor = isSentByUser ? Colors.blue : Colors.grey.shade300;
+    final Color backgroundColor =
+        isSentByUser ? Colors.blue : Colors.grey.shade300;
     final BorderRadius borderRadius = isSentByUser
         ? BorderRadius.only(
-      topLeft: Radius.circular(16.0),
-      topRight: Radius.circular(0.0),
-      bottomLeft: Radius.circular(16.0),
-      bottomRight: Radius.circular(16.0),
-    )
+            topLeft: Radius.circular(16.0),
+            topRight: Radius.circular(0.0),
+            bottomLeft: Radius.circular(16.0),
+            bottomRight: Radius.circular(16.0),
+          )
         : BorderRadius.only(
-      topLeft: Radius.circular(0.0),
-      topRight: Radius.circular(16.0),
-      bottomLeft: Radius.circular(16.0),
-      bottomRight: Radius.circular(16.0),
-    );
-
+            topLeft: Radius.circular(0.0),
+            topRight: Radius.circular(16.0),
+            bottomLeft: Radius.circular(16.0),
+            bottomRight: Radius.circular(16.0),
+          );
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: Column(
         crossAxisAlignment:
-        isSentByUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+            isSentByUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,7 +169,8 @@ class ChatMessage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       if (!isSentByUser)
-                        Text('User', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text('User',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       if (text.isNotEmpty) Text(text),
                       if (imageFile != null) Image.file(imageFile!),
                     ],
