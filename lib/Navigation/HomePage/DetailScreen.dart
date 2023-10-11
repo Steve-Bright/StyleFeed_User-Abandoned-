@@ -163,7 +163,66 @@ class DetailScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 60,
+                        height: 20,
+                      ),
+                      Text(
+                        "Sizes",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.black, fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(0),
+                                border:
+                                    Border.all(color: Colors.black, width: 1)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                "6.5 UK",
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(0),
+                                border:
+                                    Border.all(color: Colors.black, width: 1)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                "7.5 UK",
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Container(),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 40,
                       ),
                       Column(
                         children: [
