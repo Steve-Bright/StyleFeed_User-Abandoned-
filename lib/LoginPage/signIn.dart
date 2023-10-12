@@ -120,10 +120,55 @@ class _SigningInPageState extends State<SigningInPage>{
                                 child: Text('Sign In', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)),
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Container(
+                                            padding: EdgeInsets.all(16),
+                                            // height: 90,
+                                            decoration: BoxDecoration(
+                                              color: Colors.green,
+                                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Icon(Icons.check, color: Colors.white,),
+                                                SizedBox(width: 10),
+                                                Text('Login Successful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                              ],
+                                            )
+                                        ),
+                                        backgroundColor: Colors.transparent,
+                                        elevation: 0,
+                                      ),
+                                    );
                                     Navigator.pushReplacementNamed(context, '/userHome');
                                     _formKey.currentState!.save();
                                     // Perform additional actions, e.g., send data to a server
                                   }
+
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Container(
+                                          padding: EdgeInsets.all(16),
+                                          // height: 90,
+                                          decoration: BoxDecoration(
+                                            color: Colors.red,
+                                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Icon(Icons.error, color: Colors.white,),
+                                              SizedBox(width: 10),
+                                              Text('Login Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                            ],
+                                          )
+                                      ),
+                                      backgroundColor: Colors.transparent,
+                                      elevation: 0,
+                                    ),
+                                  );
                                 },
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(Colors.grey)
@@ -212,6 +257,28 @@ class _SigningInPageState extends State<SigningInPage>{
                                     padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                                     child: InkWell(
                                         onTap: (){
+                                          ScaffoldMessenger.of(context).showSnackBar(
+                                            SnackBar(
+                                              content: Container(
+                                                  padding: EdgeInsets.all(16),
+                                                  // height: 90,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.green,
+                                                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                    children: [
+                                                      Icon(Icons.check, color: Colors.white,),
+                                                      SizedBox(width: 10),
+                                                      Text('Logged in as a guest', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                                    ],
+                                                  )
+                                              ),
+                                              backgroundColor: Colors.transparent,
+                                              elevation: 0,
+                                            ),
+                                          );
                                           Navigator.pushReplacementNamed(context, '/userHome');
                                         },
                                         child: Text('Continue as a guest', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold))
