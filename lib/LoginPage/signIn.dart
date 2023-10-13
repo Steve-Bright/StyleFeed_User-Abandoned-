@@ -146,29 +146,30 @@ class _SigningInPageState extends State<SigningInPage>{
                                     _formKey.currentState!.save();
                                     // Perform additional actions, e.g., send data to a server
                                   }
-
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Container(
-                                          padding: EdgeInsets.all(16),
-                                          // height: 90,
-                                          decoration: BoxDecoration(
-                                            color: Colors.red,
-                                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Icon(Icons.error, color: Colors.white,),
-                                              SizedBox(width: 10),
-                                              Text('Login Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
-                                            ],
-                                          )
+                                  else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Container(
+                                            padding: EdgeInsets.all(16),
+                                            // height: 90,
+                                            decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Icon(Icons.error, color: Colors.white,),
+                                                SizedBox(width: 10),
+                                                Text('Login Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                              ],
+                                            )
+                                        ),
+                                        backgroundColor: Colors.transparent,
+                                        elevation: 0,
                                       ),
-                                      backgroundColor: Colors.transparent,
-                                      elevation: 0,
-                                    ),
-                                  );
+                                    );
+                                  }
                                 },
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(Colors.grey)
@@ -236,7 +237,7 @@ class _SigningInPageState extends State<SigningInPage>{
                                       InkWell(
                                         onTap: (){
                                           //navigate to the page
-                                          Navigator.pushReplacementNamed(context, '/savedCard');
+                                          Navigator.pushNamed(context, '/forgotPassword');
                                         },
                                         child: Text('Forgot Password', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueAccent)),
                                       ),

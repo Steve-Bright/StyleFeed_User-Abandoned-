@@ -219,28 +219,30 @@ class _SigningUpPageState extends State<SigningUpPage>{
                                     _formKey.currentState!.save();
                                     // Perform additional actions, e.g., send data to a server
                                   }
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Container(
-                                          padding: EdgeInsets.all(16),
-                                          // height: 90,
-                                          decoration: BoxDecoration(
-                                            color: Colors.red,
-                                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Icon(Icons.error, color: Colors.white,),
-                                              SizedBox(width: 10),
-                                              Text('Sign Up Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
-                                            ],
-                                          )
+                                  else{
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Container(
+                                            padding: EdgeInsets.all(16),
+                                            // height: 90,
+                                            decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Icon(Icons.error, color: Colors.white,),
+                                                SizedBox(width: 10),
+                                                Text('Sign Up Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                              ],
+                                            )
+                                        ),
+                                        backgroundColor: Colors.transparent,
+                                        elevation: 0,
                                       ),
-                                      backgroundColor: Colors.transparent,
-                                      elevation: 0,
-                                    ),
-                                  );
+                                    );
+                                  }
                                 },
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(Colors.grey)
@@ -307,8 +309,8 @@ class _SigningUpPageState extends State<SigningUpPage>{
                                     children: <Widget>[
                                       InkWell(
                                         onTap: (){
-                                          //navigate to the page
-
+                                          //navigaforgotte to the page
+                                          Navigator.pushNamed(context, '/forgotPassword');
                                         },
                                         child: Text('Forgot Password', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueAccent)),
                                       ),

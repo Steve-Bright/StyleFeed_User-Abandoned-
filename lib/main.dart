@@ -7,6 +7,7 @@ import 'Navigation/HomePage/home.dart';
 import 'Navigation/UserChatBox/chatHome.dart';
 import 'Navigation/CartPage/cartPage.dart';
 import 'splashScreen.dart';
+import 'LoginPage/forgotPassword.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -20,6 +21,7 @@ void main() => runApp(
           '/cart': (context) => Cart_Items(newQty: 1),
           '/userHome': (context) => const Myhome(),
           '/chatHome': (context) => ChatHome(),
+          '/forgotPassword': (context) => ForgotPassword(),
         },
       ),
     );
