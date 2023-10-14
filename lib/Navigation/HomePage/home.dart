@@ -50,9 +50,14 @@ class Myhome extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Icon(
-                Icons.search,
-                size: 27,
+              IconButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/searchResults');
+                },
+                icon: Icon(
+                  Icons.search,
+                  size: 27,
+                )
               )
             ],),
           ),

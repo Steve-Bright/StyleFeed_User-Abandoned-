@@ -8,6 +8,7 @@ import 'Navigation/UserChatBox/chatHome.dart';
 import 'Navigation/CartPage/cartPage.dart';
 import 'splashScreen.dart';
 import 'LoginPage/forgotPassword.dart';
+import 'Navigation/HomePage/SearchPage/searchResults.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -22,6 +23,7 @@ void main() => runApp(
           '/userHome': (context) => const Myhome(),
           '/chatHome': (context) => ChatHome(),
           '/forgotPassword': (context) => ForgotPassword(),
+          '/searchResults': (context) => searchResults(),
         },
       ),
     );
