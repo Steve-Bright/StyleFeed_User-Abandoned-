@@ -55,7 +55,7 @@ class _ItemWidgetState extends State<ItemWidget> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen()));
+                  Navigator.pushNamed(context, '/itemDetail');
                 },
                 child: Container(
                   margin: EdgeInsets.all(10),

@@ -50,8 +50,7 @@ class _ReadMoreState extends State<ReadMore> {
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromARGB(255, 247, 247, 247),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 247, 247, 247),
@@ -69,7 +68,7 @@ class DetailScreen extends StatelessWidget {
               )),
           actions: [
             IconButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () {},
               icon: Icon(
                 Icons.favorite,
                 color: Colors.redAccent,
@@ -265,7 +264,6 @@ class DetailScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

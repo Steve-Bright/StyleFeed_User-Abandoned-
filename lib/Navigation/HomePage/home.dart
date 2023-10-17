@@ -13,7 +13,14 @@ class Myhome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("STYLE FEED", style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold, color: Colors.black,)),
-        actions: [IconButton(onPressed: (){}, icon: Icon(Icons.person))],
+        actions: [
+          IconButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/pointSystem');
+              },
+              icon: Icon(Icons.person)
+          )
+        ],
       ),
 
       

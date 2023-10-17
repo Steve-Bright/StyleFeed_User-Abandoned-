@@ -9,6 +9,8 @@ import 'Navigation/CartPage/cartPage.dart';
 import 'splashScreen.dart';
 import 'LoginPage/forgotPassword.dart';
 import 'Navigation/HomePage/SearchPage/searchResults.dart';
+import 'Navigation/HomePage/DetailScreen.dart';
+import 'UserProfile/pointSystem.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -24,6 +26,8 @@ void main() => runApp(
           '/chatHome': (context) => ChatHome(),
           '/forgotPassword': (context) => ForgotPassword(),
           '/searchResults': (context) => searchResults(),
+          '/itemDetail': (context) => DetailScreen(),
+          '/pointSystem': (context) => PointSystem(),
         },
       ),
     );

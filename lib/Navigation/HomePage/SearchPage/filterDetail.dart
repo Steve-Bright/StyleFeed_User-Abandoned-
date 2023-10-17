@@ -210,7 +210,9 @@ class _FilterDetailState extends State<FilterDetail> {
                   border: Border.all(color: Colors.black),
                 ),
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
                   child: Text('Cancel', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black))
                 ),
               ),

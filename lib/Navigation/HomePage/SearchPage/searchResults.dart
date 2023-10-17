@@ -33,7 +33,7 @@ class _searchResultsState extends State<searchResults> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
-            Navigator.of(context).pop();
+            Navigator.pushReplacementNamed(context, '/userHome');
           },
           icon: Icon(Icons.arrow_back)
         ),
