@@ -40,7 +40,7 @@ class MyButtonNav extends StatelessWidget {
             GButton(
               icon: Icons.message,
               onPressed: (){
-                // Navigator.pushReplacementNamed(context, '/chatHome'); need fixing here
+                Navigator.pushReplacementNamed(context, '/chatPage');
                 // Navigator.push(context, MaterialPageRoute(builder: (context)=> ChatHome()));
               }
             ),
