@@ -34,6 +34,9 @@ dependencies:
   quantity_input: ^1.0.2
   animated_splash_screen: ^1.3.0
   flutter_rating_bar: ^4.0.1
+  supabase_flutter: ^1.0.0
+  timeago: ^3.1.0
+  file_picker: ^4.2.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

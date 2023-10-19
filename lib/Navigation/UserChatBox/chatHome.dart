@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../navigationBar.dart';
+import 'chatPage.dart';
 
 class Message {
   final String text;
