@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'LoginPageComponents/radio.dart';
 import 'LoginPageComponents/checkbox.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import '../Navigation/UserChatBox/utils/constants.dart';
 
 class SigningUpPage extends StatefulWidget {
-  const SigningUpPage({super.key});
+  const SigningUpPage({Key? key, required this.isRegistering}) : super(key: key);
+
+  static Route<void> route({bool isRegistering = false}) {
+    return MaterialPageRoute(
+      builder: (context) => SigningUpPage(isRegistering: isRegistering),
+    );
+  }
+
+  final bool isRegistering;
 
   @override
   State<SigningUpPage> createState() => _SigningUpPageState();
@@ -11,9 +21,34 @@ class SigningUpPage extends StatefulWidget {
 
 class _SigningUpPageState extends State<SigningUpPage>{
 
+  final bool _isLoading = false;
+
   final _formKey = GlobalKey<FormState>();
+
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _usernameController = TextEditingController();
   String? _phone;
   String? _pwd;
+
+  Future<void> _signUp() async {
+    final isValid = _formKey.currentState!.validate();
+    if (!isValid) {
+      return;
+    }
+    final email = _emailController.text;
+    final password = _passwordController.text;
+    final username = _usernameController.text;
+    try {
+      await supabase.auth.signUp(
+          email: email, password: password, data: {'username': username});
+      Navigator.pushReplacementNamed(context, '/userHome');
+    } on AuthException catch (error) {
+      context.showErrorSnackBar(message: error.message);
+    } catch (error) {
+      context.showErrorSnackBar(message: unexpectedErrorMessage);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +102,7 @@ class _SigningUpPageState extends State<SigningUpPage>{
                               )),
 
                           TextFormField(
+                              controller: _emailController,
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   // labelText: 'Enter Name',
@@ -96,6 +132,7 @@ class _SigningUpPageState extends State<SigningUpPage>{
 
 
                           TextFormField(
+                              controller: _usernameController,
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   // labelText: 'Enter Name',
@@ -160,6 +197,7 @@ class _SigningUpPageState extends State<SigningUpPage>{
 
                           TextFormField(
                               obscureText: true,
+                              controller: _passwordController,
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   // labelText: 'Enter Name',
@@ -190,60 +228,61 @@ class _SigningUpPageState extends State<SigningUpPage>{
                             height: 50.0,
                             child: TextButton(
                                 child: Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)),
-                                onPressed: () {
-                                  if (_formKey.currentState!.validate()) {
-                                    // Validation succeeded, save and process the data
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Container(
-                                            padding: EdgeInsets.all(16),
-                                            // height: 90,
-                                            decoration: BoxDecoration(
-                                              color: Colors.green,
-                                              borderRadius: BorderRadius.all(Radius.circular(20)),
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              children: [
-                                                Icon(Icons.check, color: Colors.white,),
-                                                SizedBox(width: 10),
-                                                Text('Sign Up Successful', style: TextStyle(fontSize: 18, color: Colors.white)),
-                                              ],
-                                            )
-                                        ),
-                                        backgroundColor: Colors.transparent,
-                                        elevation: 0,
-                                      ),
-                                    );
-                                      Navigator.pushReplacementNamed(context,'/userHome');
-                                    _formKey.currentState!.save();
-                                    // Perform additional actions, e.g., send data to a server
-                                  }
-                                  else{
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Container(
-                                            padding: EdgeInsets.all(16),
-                                            // height: 90,
-                                            decoration: BoxDecoration(
-                                              color: Colors.red,
-                                              borderRadius: BorderRadius.all(Radius.circular(20)),
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              children: [
-                                                Icon(Icons.error, color: Colors.white,),
-                                                SizedBox(width: 10),
-                                                Text('Sign Up Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
-                                              ],
-                                            )
-                                        ),
-                                        backgroundColor: Colors.transparent,
-                                        elevation: 0,
-                                      ),
-                                    );
-                                  }
-                                },
+                                onPressed: _isLoading ? null : _signUp,
+                                // onPressed: () {
+                                //   if (_formKey.currentState!.validate()) {
+                                //     // Validation succeeded, save and process the data
+                                //     ScaffoldMessenger.of(context).showSnackBar(
+                                //       SnackBar(
+                                //         content: Container(
+                                //             padding: EdgeInsets.all(16),
+                                //             // height: 90,
+                                //             decoration: BoxDecoration(
+                                //               color: Colors.green,
+                                //               borderRadius: BorderRadius.all(Radius.circular(20)),
+                                //             ),
+                                //             child: Row(
+                                //               mainAxisAlignment: MainAxisAlignment.start,
+                                //               children: [
+                                //                 Icon(Icons.check, color: Colors.white,),
+                                //                 SizedBox(width: 10),
+                                //                 Text('Sign Up Successful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                //               ],
+                                //             )
+                                //         ),
+                                //         backgroundColor: Colors.transparent,
+                                //         elevation: 0,
+                                //       ),
+                                //     );
+                                //       Navigator.pushReplacementNamed(context,'/userHome');
+                                //     _formKey.currentState!.save();
+                                //     // Perform additional actions, e.g., send data to a server
+                                //   }
+                                //   else{
+                                //     ScaffoldMessenger.of(context).showSnackBar(
+                                //       SnackBar(
+                                //         content: Container(
+                                //             padding: EdgeInsets.all(16),
+                                //             // height: 90,
+                                //             decoration: BoxDecoration(
+                                //               color: Colors.red,
+                                //               borderRadius: BorderRadius.all(Radius.circular(20)),
+                                //             ),
+                                //             child: Row(
+                                //               mainAxisAlignment: MainAxisAlignment.start,
+                                //               children: [
+                                //                 Icon(Icons.error, color: Colors.white,),
+                                //                 SizedBox(width: 10),
+                                //                 Text('Sign Up Unsuccessful', style: TextStyle(fontSize: 18, color: Colors.white)),
+                                //               ],
+                                //             )
+                                //         ),
+                                //         backgroundColor: Colors.transparent,
+                                //         elevation: 0,
+                                //       ),
+                                //     );
+                                //   }
+                                // },
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(Colors.grey)
                                 )
