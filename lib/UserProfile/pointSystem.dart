@@ -89,7 +89,7 @@ class _PointSystemState extends State<PointSystem> {
                   ),
 
                   Container(
-                    height: 480,
+                    height: 400,
                     // color: Colors.red,
                       child: TabBarView(
                         children: [

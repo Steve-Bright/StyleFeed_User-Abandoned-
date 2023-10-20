@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import '../DetailScreen.dart';
 
-class SearchedItems extends StatefulWidget {
-  const SearchedItems({super.key});
+class wishListItems extends StatefulWidget {
+  const wishListItems({super.key});
 
   @override
-  State<SearchedItems> createState() => _SearchedItemsState();
+  State<wishListItems> createState() => _wishListItemsState();
 }
 
-class _SearchedItemsState extends State<SearchedItems> {
+class _wishListItemsState extends State<wishListItems> {
+
   List descritpion = [
-    ".","Shoe","Dress","Shirt","Jacket", "Cap", "Dress", "Jeans", "Hat"
+    ".","Shoe","Dress","ShiTrt","Jacket", "Cap", "Dress", "Jeans", "Hat"
   ];
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _SearchedItemsState extends State<SearchedItems> {
                         ),
                       ),
                     ),
-                    Icon(Icons.favorite_border,
+                    Icon(Icons.favorite,
                       color: Colors.red,
                     ),
                   ],

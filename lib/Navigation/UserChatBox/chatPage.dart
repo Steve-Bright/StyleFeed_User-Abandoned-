@@ -58,9 +58,9 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: BackButton(
-            onPressed: () => Navigator.pushReplacementNamed(context, '/signUp'),
-          ),
+          // leading: BackButton(
+          //   onPressed: () => Navigator.pushReplacementNamed(context, '/signUp'),
+          // ),
           title: const Text('Chat')),
       body: StreamBuilder<List<Message>>(
         stream: _messagesStream,

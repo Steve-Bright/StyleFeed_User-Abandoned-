@@ -51,7 +51,7 @@ class _RewardsTabState extends State<RewardsTab> {
                         height: 100,
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(4),
                         child: Column(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,

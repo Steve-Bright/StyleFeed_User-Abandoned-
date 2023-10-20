@@ -18,7 +18,7 @@ class User {
 
 class ChatHome extends StatelessWidget {
   final List<Message> messages = [
-    Message("Ex lay ka ly......", "Wai Yan"),
+    Message("Ma Nan ka ly......", "Wai Yan"),
     Message("Br mote srr yin kg ma ll", "Ma Nan"),
     Message("Laptop gyi lag ny p", "Swam Htet"),
     Message("tay chin tl", "Swan Htet Naing"),
@@ -35,20 +35,19 @@ class ChatHome extends StatelessWidget {
     User("Ma Thiri", "assets/pfp/winter.jpg"),
   ];
 
-  final String currentUserProfileImage = "assets/images/winter.jpg";
+  final String currentUserProfileImage = "assets/pfp/winter.jpg";
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
             title: Text('Messages'),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+            // leading: IconButton(
+            //   icon: Icon(Icons.arrow_back),
+            //   onPressed: () {
+            //     Navigator.pop(context);
+            //   },
+            // ),
             // Add the user's profile image to the top right corner
             actions: [
               CircleAvatar(
@@ -58,8 +57,7 @@ class ChatHome extends StatelessWidget {
             ],
           ),
           body: MessageList(messages: messages, users: users),
-          bottomNavigationBar: MyButtonNav()),
-    );
+          bottomNavigationBar: MyButtonNav());
   }
 }
 
@@ -77,12 +75,17 @@ class MessageList extends StatelessWidget {
         final message = messages[index];
         final user = users.firstWhere((u) => u.name == message.user);
 
-        return ListTile(
-          leading: CircleAvatar(
-            backgroundImage: AssetImage(user.profileImage),
+        return InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, '/chatPage');
+          },
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(user.profileImage),
+            ),
+            title: Text(message.user),
+            subtitle: Text(message.text),
           ),
-          title: Text(message.user),
-          subtitle: Text(message.text),
         );
       },
     );

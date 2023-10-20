@@ -48,7 +48,7 @@ class Myhome extends StatelessWidget {
             child: Row(children: [
               Container(
                 margin: EdgeInsets.only(left: 5),
-                width: 300,
+                width: 280,
                 child: TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,

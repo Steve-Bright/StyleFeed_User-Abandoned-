@@ -146,7 +146,6 @@ class _SigningInPageState extends State<SigningInPage>{
                           SizedBox(
                             height: 30.0,
                           ),
-
                           SizedBox(
                             width: 400.0,
                             height: 50.0,
