@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'DetailScreen.dart';
+import '../../Model/Product.dart';
 
 class ItemWidget extends StatefulWidget {
   const ItemWidget({super.key});
@@ -10,7 +11,7 @@ class ItemWidget extends StatefulWidget {
 
 class _ItemWidgetState extends State<ItemWidget> {
   List descritpion = [
-    ".","Shoe","Dress","Shirt","Jacket"
+    "Shoe","Dress","Shirt","Jacket"
   ];
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class _ItemWidgetState extends State<ItemWidget> {
       crossAxisCount: 2,
       shrinkWrap: true,
       children: [
-        for(int i=1; i<descritpion.length; i++)
+        for(int i=0; i<products.length; i++)
         Container(
           padding: EdgeInsets.only(left: 15, right: 15, top: 10),
           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
@@ -55,11 +56,11 @@ class _ItemWidgetState extends State<ItemWidget> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context, '/itemDetail');
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen(products[i])));
                 },
                 child: Container(
                   margin: EdgeInsets.all(10),
-                  child: Image.asset("assets/$i.png",
+                  child: Image.asset(products[i].image,
                   width: 120,
                   height: 120,
                   fit: BoxFit.contain,
@@ -69,7 +70,7 @@ class _ItemWidgetState extends State<ItemWidget> {
               Container(
                 padding: EdgeInsets.only(bottom: 8),
                 alignment: Alignment.centerLeft,
-                child: Text("Product Title", 
+                child: Text(products[i].title,
                   style: TextStyle(
                   fontSize: 18,
                   color: Colors.black, 
@@ -78,7 +79,7 @@ class _ItemWidgetState extends State<ItemWidget> {
               ),
               Container(
                 alignment: Alignment.centerLeft,
-                child: Text("${descritpion[i]}", 
+                child: Text(products[i].description,
                 style: TextStyle(
                   fontSize: 15, color: Colors.black
                 )),

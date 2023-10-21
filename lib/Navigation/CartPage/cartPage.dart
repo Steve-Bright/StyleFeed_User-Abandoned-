@@ -145,7 +145,9 @@ class _Cart_ItemsState extends State<Cart_Items> {
                       Padding(
                         padding: EdgeInsets.all(5),
                           child: TextButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/checkoutDetail');
+                            },
                             child: Container(
                               width: 100,
                               height: 50,

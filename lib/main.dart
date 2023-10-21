@@ -17,6 +17,7 @@ import 'Navigation/UserChatBox/chatHome.dart';
 import 'Navigation/UserChatBox/utils/constants.dart';
 import 'LoginPage/loginSHN.dart';
 import 'LoginPage/signUpSHN.dart';
+import 'Navigation/CartPage/orderSuccess/checkout_detail.dart';
 
 // void main() {
 //   runApp(
@@ -65,10 +66,11 @@ Future<void> main() async{
         '/chatHome': (context) => ChatHome(),
         '/forgotPassword': (context) => ForgotPassword(),
         '/searchResults': (context) => searchResults(),
-        '/itemDetail': (context) => DetailScreen(),
+        // '/itemDetail': (context) => DetailScreen(),
         '/pointSystem': (context) => PointSystem(),
         '/chatHome': (context) => ChatHome(),
-        '/chatPage': (context) => ChatPage()
+        '/chatPage': (context) => ChatPage(),
+        '/checkoutDetail': (context) => CheckoutDetail()
       },
     ),
   );

@@ -28,6 +28,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flip_card: ^0.6.0
+  patterns_canvas: ^0.4.0
+  clay_containers:
+  get:
   google_fonts: ^6.1.0
   flutter:
     sdk: flutter
@@ -75,6 +79,10 @@ flutter:
     - assets/images/
     - assets/pfp/
     - assets/rewards/
+    - assets/pay_images/
+    - assets/order_success/
+    - assets/myanmar-townships.json
+    - assets/logos/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

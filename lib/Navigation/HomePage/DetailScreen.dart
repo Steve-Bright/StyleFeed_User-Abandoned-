@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../Model/Product.dart';
 
 class ReadMore extends StatefulWidget {
   @override
@@ -48,6 +49,9 @@ class _ReadMoreState extends State<ReadMore> {
 }
 
 class DetailScreen extends StatelessWidget {
+  final Product _product;
+  DetailScreen(this._product);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
