@@ -32,6 +32,9 @@ dependencies:
   patterns_canvas: ^0.4.0
   clay_containers:
   get:
+  intl: ^0.17.0
+  profile: ^0.0.1
+  image_picker: ^0.8.4
   google_fonts: ^6.1.0
   flutter:
     sdk: flutter
