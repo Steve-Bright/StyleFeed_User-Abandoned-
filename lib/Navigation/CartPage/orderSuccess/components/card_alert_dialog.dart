@@ -48,7 +48,8 @@ class CardAlertDialog extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurple[200],
-                  minimumSize: Size(250, 45),
+                  minimumSize: Size(250, 45
+                  ),
                   side: BorderSide.none,
                   shape: StadiumBorder(),
                 ),
