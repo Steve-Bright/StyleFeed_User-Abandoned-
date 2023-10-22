@@ -8,7 +8,7 @@ class ReadMore extends StatefulWidget {
 }
 
 class _ReadMoreState extends State<ReadMore> {
-  bool isExpanded = false;
+  bool isExpanded = true;
 
   @override
   Widget build(BuildContext context) {

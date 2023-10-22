@@ -34,6 +34,7 @@ class Myhome extends StatelessWidget {
           color: Color(0xFFEDECF2),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(35),
+            topRight: Radius.circular(35),
           )
         ),
         child: Column(children: [
@@ -49,7 +50,7 @@ class Myhome extends StatelessWidget {
             child: Row(children: [
               Container(
                 margin: EdgeInsets.only(left: 5),
-                width: 280,
+                width: 250,
                 child: TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
