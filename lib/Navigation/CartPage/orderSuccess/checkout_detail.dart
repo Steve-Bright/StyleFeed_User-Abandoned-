@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:clay_containers/clay_containers.dart';
-import 'address_screen.dart';
+import 'choose_address.dart';
 
 class CheckoutDetail extends StatefulWidget {
   const CheckoutDetail({super.key});
@@ -437,7 +437,7 @@ class _CheckoutDetailState extends State<CheckoutDetail> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AddressScreen()),
+                MaterialPageRoute(builder: (context) => AddressBook()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -447,7 +447,7 @@ class _CheckoutDetailState extends State<CheckoutDetail> {
               shape: StadiumBorder(),
             ),
             child: Text(
-              'Place Order',
+              'Confrim',
               style: GoogleFonts.montserrat(
                 color: Colors.grey[800],
                 fontSize: 15,

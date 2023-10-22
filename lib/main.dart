@@ -44,6 +44,10 @@ import 'UserProfile/profile_screen/edit_profile_screen.dart';
 //     ),
 //   );
 // }
+// void main() => runApp(MaterialApp(
+//   home: CheckoutDetail(),
+// ));
+
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
