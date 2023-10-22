@@ -16,7 +16,8 @@ class Myhome extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: (){
-                Navigator.pushNamed(context, '/pointSystem');
+                // Navigator.pushNamed(context, '/pointSystem');
+                Navigator.pushNamed(context, '/profile');
               },
               icon: Icon(Icons.person)
           )
