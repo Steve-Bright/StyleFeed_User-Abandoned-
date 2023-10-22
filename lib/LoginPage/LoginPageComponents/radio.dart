@@ -18,9 +18,10 @@ class _GenderRadioState extends State<GenderRadio> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          Text('Gender'),
+          Text('Gender', style: TextStyle(fontSize: 16, color: Colors.white)),
           SizedBox(width: 30),
           Radio<Gender>(
+            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
             value: Gender.male,
             groupValue: _character,
             onChanged: (Gender? value) {
@@ -29,10 +30,11 @@ class _GenderRadioState extends State<GenderRadio> {
               });
             },
           ),
-          const Text('Male'),
+          const Text('Male', style: TextStyle(fontSize: 16, color: Colors.white)),
           SizedBox(width: 20.0),
           Radio<Gender>(
             value: Gender.female,
+            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
             groupValue: _character,
             onChanged: (Gender? value) {
               setState(() {
@@ -40,10 +42,11 @@ class _GenderRadioState extends State<GenderRadio> {
               });
             },
           ),
-          const Text('Female'),
+          const Text('Female', style: TextStyle(fontSize: 16, color: Colors.white)),
           SizedBox(width: 20),
           Radio<Gender>(
             value: Gender.others,
+            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
             groupValue: _character,
             onChanged: (Gender? value) {
               setState(() {
@@ -51,7 +54,7 @@ class _GenderRadioState extends State<GenderRadio> {
               });
             },
           ),
-          const Text('Others')
+          const Text('Others', style: TextStyle(fontSize: 16, color: Colors.white))
         ],
       ),
     );

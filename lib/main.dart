@@ -15,11 +15,12 @@ import 'UserProfile/pointSystem.dart';
 import 'Navigation/UserChatBox/chatPage.dart';
 import 'Navigation/UserChatBox/chatHome.dart';
 import 'Navigation/UserChatBox/utils/constants.dart';
-import 'LoginPage/loginSHN.dart';
-import 'LoginPage/signUpSHN.dart';
 import 'Navigation/CartPage/orderSuccess/checkout_detail.dart';
 import 'UserProfile/profile_screen/profile_screen.dart';
 import 'UserProfile/profile_screen/edit_profile_screen.dart';
+import 'LoginPage/signInScreen.dart';
+import 'LoginPage/signUpScreen.dart';
+import 'LoginPage/reset_password.dart';
 
 // void main() {
 //   runApp(
@@ -62,10 +63,11 @@ Future<void> main() async{
       initialRoute: '/signIn',
       routes: {
         '/splashScreen': (context) => const SplashScreen(),
-        '/signIn': (context) => const SigningInPage(),
-        '/signUp': (context) => const SigningUpPage(isRegistering: false),
-        // '/signIn': (context) => const LoginPage(),
-        // '/signUp': (context) => const RegisterPage(isRegistering: false),
+        // '/signIn': (context) => const SigningInPage(),
+        // '/signUp': (context) => const SigningUpPage(isRegistering: false),
+        '/signIn': (context)=> const SignInScreen(),
+        '/signUp': (context)=> const SignUpScreen(isRegistering: false),
+        '/resetPassword': (context)=> const ResetPassword(),
         '/savedCard': (context) => const SavedPage(),
         '/cart': (context) => Cart_Items(newQty: 1),
         '/userHome': (context) => const Myhome(),

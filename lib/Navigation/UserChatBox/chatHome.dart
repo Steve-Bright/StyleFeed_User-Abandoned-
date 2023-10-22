@@ -18,21 +18,23 @@ class User {
 
 class ChatHome extends StatelessWidget {
   final List<Message> messages = [
-    Message("Ma Nan ka ly......", "Wai Yan"),
-    Message("Br mote srr yin kg ma ll", "Ma Nan"),
-    Message("Laptop gyi lag ny p", "Swam Htet"),
-    Message("tay chin tl", "Swan Htet Naing"),
-    Message("Flutter nk 2 par twr", "Moe Yan"),
-    Message("X p", "Ma Thiri"),
+    Message("Yes, It is still available", "High Cultured"),
+    Message("There would be two colors for that shirt, sir", "Yangoods")
+    // Message("Br mote srr yin kg ma ll", "Ma Nan"),
+    // Message("Laptop gyi lag ny p", "Swam Htet"),
+    // Message("tay chin tl", "Swan Htet Naing"),
+    // Message("Flutter nk 2 par twr", "Moe Yan"),
+    // Message("X p", "Ma Thiri"),
   ];
 
   final List<User> users = [
-    User("Wai Yan", "assets/pfp/winter.jpg"),
-    User("Ma Nan", "assets/pfp/winter.jpg"),
-    User("Swam Htet", "assets/pfp/winter.jpg"),
-    User("Swan Htet Naing", "assets/pfp/winter.jpg"),
-    User("Moe Yan", "assets/pfp/winter.jpg"),
-    User("Ma Thiri", "assets/pfp/winter.jpg"),
+    User("High Cultured", "assets/pfp/winter.jpg"),
+    User("Yangoods", "assets/pfp/winter.jpg")
+    // User("Ma Nan", "assets/pfp/winter.jpg"),
+    // User("Swam Htet", "assets/pfp/winter.jpg"),
+    // User("Swan Htet Naing", "assets/pfp/winter.jpg"),
+    // User("Moe Yan", "assets/pfp/winter.jpg"),
+    // User("Ma Thiri", "assets/pfp/winter.jpg"),
   ];
 
   final String currentUserProfileImage = "assets/pfp/winter.jpg";
