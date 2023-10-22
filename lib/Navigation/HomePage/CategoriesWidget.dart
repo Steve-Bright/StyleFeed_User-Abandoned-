@@ -17,7 +17,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
       scrollDirection: Axis.horizontal,
       child: Padding(padding: EdgeInsets.only(top: 1),
       child: Row(children: [
-        for(int i = 1; i < 7; i++ )
+        for(int i = 0; i < 7; i++ )
         Container(
           margin: EdgeInsets.all(8),
           padding: EdgeInsets.symmetric(

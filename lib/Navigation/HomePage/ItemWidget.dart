@@ -10,9 +10,6 @@ class ItemWidget extends StatefulWidget {
 }
 
 class _ItemWidgetState extends State<ItemWidget> {
-  List descritpion = [
-    "Shoe","Dress","Shirt","Jacket"
-  ];
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -43,7 +40,7 @@ class _ItemWidgetState extends State<ItemWidget> {
                   child: Text(
                     "-50%",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     color: Color(0xFFEDECF2),
                     fontWeight: FontWeight.bold
                   ),
@@ -68,11 +65,11 @@ class _ItemWidgetState extends State<ItemWidget> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 8),
+                padding: EdgeInsets.only(bottom: 5),
                 alignment: Alignment.centerLeft,
                 child: Text(products[i].title,
                   style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   color: Colors.black, 
                   fontWeight: FontWeight.bold,
                 ),),
@@ -81,7 +78,7 @@ class _ItemWidgetState extends State<ItemWidget> {
                 alignment: Alignment.centerLeft,
                 child: Text(products[i].description,
                 style: TextStyle(
-                  fontSize: 15, color: Colors.black
+                  fontSize: 12, color: Colors.black
                 )),
               ),
               Padding(padding: EdgeInsets.symmetric(vertical: 10),
@@ -89,7 +86,7 @@ class _ItemWidgetState extends State<ItemWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("\$55",
-                  style: TextStyle(fontSize: 16,
+                  style: TextStyle(fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.black
                   ),
