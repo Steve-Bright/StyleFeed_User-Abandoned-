@@ -18,6 +18,8 @@ import 'Navigation/UserChatBox/utils/constants.dart';
 import 'LoginPage/loginSHN.dart';
 import 'LoginPage/signUpSHN.dart';
 import 'Navigation/CartPage/orderSuccess/checkout_detail.dart';
+import 'UserProfile/profile_screen/profile_screen.dart';
+import 'UserProfile/profile_screen/edit_profile_screen.dart';
 
 // void main() {
 //   runApp(
@@ -70,7 +72,9 @@ Future<void> main() async{
         '/pointSystem': (context) => PointSystem(),
         '/chatHome': (context) => ChatHome(),
         '/chatPage': (context) => ChatPage(),
-        '/checkoutDetail': (context) => CheckoutDetail()
+        '/checkoutDetail': (context) => CheckoutDetail(),
+        '/profile': (context) => ProfileScreen(),
+        '/editProfile': (context) => EditProfileScreen()
       },
     ),
   );
